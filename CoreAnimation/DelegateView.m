@@ -49,7 +49,7 @@
                               NSParagraphStyleAttributeName: style};
     
     NSAttributedString* text = [[NSAttributedString alloc] initWithString:@"Push the Limits" attributes:atrribs];
-    
+    NSLog(@"bouns %@, inset %@",NSStringFromCGRect(layer.bounds),NSStringFromCGRect(CGRectInset(layer.bounds, 10, 20)));
     [text drawInRect:CGRectInset(layer.bounds, 10, 20)];
     
     UIGraphicsPopContext();

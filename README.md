@@ -66,4 +66,26 @@ CoreAnimation提供了很多工具，有些即便你不打算使用动画也很�
      }
      
      
+### 隐式动画
+`CALayer`隐式为所有支持动画的属性添加动画，可以使用`【CATransaction setDisableActions:YES】`来关闭默认动画。通常只需要设置图层的属性，图层就会以默认的方式执行动画。`Core Animation`把属性的更改绑定到了原子事务`CATransaction`，当你首次在一个包含运行循环的的线程上修改一个图层时。系统会为你创建一个隐式的`CATransaction`在运行循环中，所有的图层修改都被收集起来，当运行循环结束时，所以得修改都提交到图层树。如果想要修改动画属性，需要对当前事务进行修改。例如动画持续时间`[CATransaction setAnimationDuration:2.0]`  也可以使用`【CATransaction setCompletionBlock:】`设置一个完整的代码块(completion block).**可以使用这种方式连接多个动画，虽然运行循环而已自动创建一个事务，但你还是可以通过`[CATransaction Begin]`和`【CATransaction commit】`来创建自己的显示事务，这样你可以为动画的不同部分指定不同的持续时间或者禁用时间循环中某一部分的动画**
+一切没有代码示例的扯淡都是瞎扯淡。
+    
+    [CATransaction begin];
+    //[CATransaction setDisableActions:YES];
+    [CATransaction setAnimationDuration:3];
+    
+    NSArray* layers = self.view.layer.sublayers;
+    CALayer* layer = [layers objectAtIndex:2];
+    [layer setPosition:CGPointMake(200, 250)];
+    
+    [CATransaction commit];
+    
+* 如何为`CALayer`的自定义属性添加动画呢？
+
+
+### 显示动画
+所有在隐式动画里做到的都能在显示动画里做到，最基本的动画是`CABasicAnimation`
+
+
+    
   
