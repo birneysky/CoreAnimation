@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CALayer+ZBAnimation.h"
 
 @interface ViewController ()
 
@@ -31,7 +32,7 @@
     [self.view addSubview:squareView];
     
 //    [CATransaction begin];
-//    //[CATransaction setDisableActions:YES];
+//    [CATransaction setDisableActions:YES];
 //    squareLayer.opacity = 0;
 //    CABasicAnimation* fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
 //    fade.duration = 2.0;
@@ -39,6 +40,8 @@
 //    fade.toValue = @0.0;
 //    [squareLayer addAnimation:fade forKey:@"fade"];
 //    [CATransaction commit];
+    
+    [squareLayer setValue:@(0.0) forKeyPath:@"opacity" duration:3.0 delay:0];
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(drop:)]];
 }

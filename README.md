@@ -68,6 +68,9 @@ CoreAnimation提供了很多工具，有些即便你不打算使用动画也很�
      
 ### 隐式动画
 `CALayer`隐式为所有支持动画的属性添加动画，可以使用`【CATransaction setDisableActions:YES】`来关闭默认动画。通常只需要设置图层的属性，图层就会以默认的方式执行动画。`Core Animation`把属性的更改绑定到了原子事务`CATransaction`，当你首次在一个包含运行循环的的线程上修改一个图层时。系统会为你创建一个隐式的`CATransaction`在运行循环中，所有的图层修改都被收集起来，当运行循环结束时，所以得修改都提交到图层树。如果想要修改动画属性，需要对当前事务进行修改。例如动画持续时间`[CATransaction setAnimationDuration:2.0]`  也可以使用`【CATransaction setCompletionBlock:】`设置一个完整的代码块(completion block).**可以使用这种方式连接多个动画，虽然运行循环而已自动创建一个事务，但你还是可以通过`[CATransaction Begin]`和`【CATransaction commit】`来创建自己的显示事务，这样你可以为动画的不同部分指定不同的持续时间或者禁用时间循环中某一部分的动画**
+
+
+
 一切没有代码示例的扯淡都是瞎扯淡。
     
     [CATransaction begin];
@@ -87,5 +90,72 @@ CoreAnimation提供了很多工具，有些即便你不打算使用动画也很�
 所有在隐式动画里做到的都能在显示动画里做到，最基本的动画是`CABasicAnimation`
 
 
+    ALayer* squareLayer = [CALayer layer];
+    squareLayer.backgroundColor = [[UIColor redColor] CGColor];
     
-  
+    squareLayer.frame = CGRectMake(100, 100, 20, 20);
+    [self.view.layer addSublayer:squareLayer];
+    
+    CABasicAnimation* fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        fade.duration = 2.0;
+    fade.fromValue = @1.0;
+    fade.toValue = @0.0;
+    [squareLayer addAnimation:fade forKey:@"fade"];
+    
+ `CABasicAnimation`是一个基本动画，虽然容易使用但是不是很灵活，想要更多的控制动画，可以使用`CAKeyFrameAnimation`。
+ 
+ 动画的工作原理是创建图层的多个副本，发送`setValue: forKey:`消息到副本，然后显示。
+ 上面的示例代码中，有一个麻烦的问题 `闪回` 这段代码会让图层淡出，然后又突然出现。为什么呢？
+ 这是因为动画在工作时`CABasicAnimation`创建了`CALayer`的副本，并对其修改，这个副本被称为表示层，表示层会被
+ 绘制到屏幕上，绘制完成后，所有的更改都会丢失，并有模型层决定新的状态(模型层是原本的`CALayer`对象的属性定义的)
+ 
+ 上述问题的解决方法是设置模型层 
+ 
+    squareLayer.opacity = 0;
+    CABasicAnimation* fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fade.duration = 2.0;
+    fade.fromValue = @1.0;
+    fade.toValue = @0.0;
+    [squareLayer addAnimation:fade forKey:@"fade"];
+    
+    
+ 有时候它能正常工作，但是有时`setOpacity:`中的隐式动画会与`animationWithKeyPath:`的显示动画冲突最好的解决办法是在执行显示动画时，先关闭隐式动画。
+ 
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    squareLayer.opacity = 0;
+    CABasicAnimation* fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fade.duration = 2.0;
+    fade.fromValue = @1.0;
+    fade.toValue = @0.0;
+    [squareLayer addAnimation:fade forKey:@"fade"];
+    [CATransaction commit];
+    
+ 
+    
+    
+     @implementation CALayer (ZBAnimation)
+     
+     - (void)setValue:(id)value
+      forKeyPath:(NSString *)keyPath
+        duration:(CFTimeInterval)duration
+           delay:(CFTimeInterval)delay
+	{
+    	[CATransaction begin];
+    
+    	[CATransaction setDisableActions:YES];
+    
+    	[self setValue:value forKeyPath:keyPath];
+    
+    	CABasicAnimation* anim = [CABasicAnimation animationWithKeyPath:keyPath];
+    	anim.duration = duration;
+    	anim.beginTime = CACurrentMediaTime() + delay;
+    	anim.fillMode = kCAFillModeBoth;
+    	anim.fromValue = [[self presentationLayer] valueForKey:keyPath];
+    	anim.toValue = value;
+    	[self addAnimation:anim forKey:keyPath];
+    
+    	[CATransaction commit];
+	}
+
+	@end

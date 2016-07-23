@@ -16,6 +16,7 @@
 		74853D201D1C3545003FE963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74853D1E1D1C3545003FE963 /* LaunchScreen.storyboard */; };
 		74853D2B1D1C3545003FE963 /* CoreAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74853D2A1D1C3545003FE963 /* CoreAnimationTests.m */; };
 		74853D361D1C3545003FE963 /* CoreAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74853D351D1C3545003FE963 /* CoreAnimationUITests.m */; };
+		74E265E61D43A8D0001C08F7 /* CALayer+ZBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		74853D311D1C3545003FE963 /* CoreAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74853D351D1C3545003FE963 /* CoreAnimationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationUITests.m; sourceTree = "<group>"; };
 		74853D371D1C3545003FE963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E265E41D43A8D0001C08F7 /* CALayer+ZBAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ZBAnimation.h"; sourceTree = "<group>"; };
+		74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ZBAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 		74853D0F1D1C3545003FE963 /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				74E265E41D43A8D0001C08F7 /* CALayer+ZBAnimation.h */,
+				74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */,
 				744BFA9B1D2EA05800210DFB /* DelegateView.h */,
 				744BFA9C1D2EA05800210DFB /* DelegateView.m */,
 				74853D131D1C3545003FE963 /* AppDelegate.h */,
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E265E61D43A8D0001C08F7 /* CALayer+ZBAnimation.m in Sources */,
 				74853D181D1C3545003FE963 /* ViewController.m in Sources */,
 				74853D151D1C3545003FE963 /* AppDelegate.m in Sources */,
 				74853D121D1C3545003FE963 /* main.m in Sources */,
