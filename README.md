@@ -161,3 +161,5 @@ CoreAnimation提供了很多工具，有些即便你不打算使用动画也很�
 
 	@end
 `presentationLayer` 应该是上文提到的表示层。但是根据实际测试，presentationLayer 方法总是返回nil，具体原因也不清楚，改为`[self valueForKey:keyPath]`
+### 定时
+ 

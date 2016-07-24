@@ -17,6 +17,7 @@
 		74853D2B1D1C3545003FE963 /* CoreAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74853D2A1D1C3545003FE963 /* CoreAnimationTests.m */; };
 		74853D361D1C3545003FE963 /* CoreAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74853D351D1C3545003FE963 /* CoreAnimationUITests.m */; };
 		74E265E61D43A8D0001C08F7 /* CALayer+ZBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */; };
+		74E265E91D44C242001C08F7 /* BoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265E81D44C242001C08F7 /* BoxViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		74853D371D1C3545003FE963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74E265E41D43A8D0001C08F7 /* CALayer+ZBAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ZBAnimation.h"; sourceTree = "<group>"; };
 		74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ZBAnimation.m"; sourceTree = "<group>"; };
+		74E265E71D44C242001C08F7 /* BoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxViewController.h; sourceTree = "<group>"; };
+		74E265E81D44C242001C08F7 /* BoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 		74853D0F1D1C3545003FE963 /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				74E265E71D44C242001C08F7 /* BoxViewController.h */,
+				74E265E81D44C242001C08F7 /* BoxViewController.m */,
 				74E265E41D43A8D0001C08F7 /* CALayer+ZBAnimation.h */,
 				74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */,
 				744BFA9B1D2EA05800210DFB /* DelegateView.h */,
@@ -282,6 +287,7 @@
 			files = (
 				74E265E61D43A8D0001C08F7 /* CALayer+ZBAnimation.m in Sources */,
 				74853D181D1C3545003FE963 /* ViewController.m in Sources */,
+				74E265E91D44C242001C08F7 /* BoxViewController.m in Sources */,
 				74853D151D1C3545003FE963 /* AppDelegate.m in Sources */,
 				74853D121D1C3545003FE963 /* main.m in Sources */,
 				744BFA9D1D2EA05800210DFB /* DelegateView.m in Sources */,
