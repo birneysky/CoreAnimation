@@ -16,20 +16,20 @@
            delay:(CFTimeInterval)delay
 {
     [CATransaction begin];
-    
     [CATransaction setDisableActions:YES];
-    
-    [self setValue:value forKeyPath:keyPath];
     
     CABasicAnimation* anim = [CABasicAnimation animationWithKeyPath:keyPath];
     anim.duration = duration;
     anim.beginTime = CACurrentMediaTime() + delay;
-    anim.fillMode = kCAFillModeBoth;
-    anim.fromValue = [[self presentationLayer] valueForKey:keyPath];
+    //anim.fillMode = kCAFillModeBoth;
+    anim.fromValue = [self valueForKey:keyPath];
     anim.toValue = value;
+    
     [self addAnimation:anim forKey:keyPath];
+    [self setValue:value forKeyPath:keyPath];
     
     [CATransaction commit];
+    
 }
 
 @end

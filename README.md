@@ -145,17 +145,19 @@ CoreAnimation提供了很多工具，有些即便你不打算使用动画也很�
     
     	[CATransaction setDisableActions:YES];
     
-    	[self setValue:value forKeyPath:keyPath];
+    	//[self setValue:value forKeyPath:keyPath];
     
     	CABasicAnimation* anim = [CABasicAnimation animationWithKeyPath:keyPath];
     	anim.duration = duration;
     	anim.beginTime = CACurrentMediaTime() + delay;
     	anim.fillMode = kCAFillModeBoth;
-    	anim.fromValue = [[self presentationLayer] valueForKey:keyPath];
+    	anim.fromValue = [self valueForKey:keyPath];
+    	//[[self presentationLayer] valueForKey:keyPath];
     	anim.toValue = value;
     	[self addAnimation:anim forKey:keyPath];
-    
+    	[self setValue:value forKeyPath:keyPath];
     	[CATransaction commit];
 	}
 
 	@end
+`presentationLayer` 应该是上文提到的表示层。但是根据实际测试，presentationLayer 方法总是返回nil，具体原因也不清楚，改为`[self valueForKey:keyPath]`
