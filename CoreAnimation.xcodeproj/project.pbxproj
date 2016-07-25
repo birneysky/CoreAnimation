@@ -18,6 +18,7 @@
 		74853D361D1C3545003FE963 /* CoreAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74853D351D1C3545003FE963 /* CoreAnimationUITests.m */; };
 		74E265E61D43A8D0001C08F7 /* CALayer+ZBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */; };
 		74E265E91D44C242001C08F7 /* BoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265E81D44C242001C08F7 /* BoxViewController.m */; };
+		74E265EC1D46629B001C08F7 /* BoxTransformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265EB1D46629B001C08F7 /* BoxTransformViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ZBAnimation.m"; sourceTree = "<group>"; };
 		74E265E71D44C242001C08F7 /* BoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxViewController.h; sourceTree = "<group>"; };
 		74E265E81D44C242001C08F7 /* BoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxViewController.m; sourceTree = "<group>"; };
+		74E265EA1D46629B001C08F7 /* BoxTransformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxTransformViewController.h; sourceTree = "<group>"; };
+		74E265EB1D46629B001C08F7 /* BoxTransformViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxTransformViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 		74853D0F1D1C3545003FE963 /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				74E265EA1D46629B001C08F7 /* BoxTransformViewController.h */,
+				74E265EB1D46629B001C08F7 /* BoxTransformViewController.m */,
 				74E265E71D44C242001C08F7 /* BoxViewController.h */,
 				74E265E81D44C242001C08F7 /* BoxViewController.m */,
 				74E265E41D43A8D0001C08F7 /* CALayer+ZBAnimation.h */,
@@ -286,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E265E61D43A8D0001C08F7 /* CALayer+ZBAnimation.m in Sources */,
+				74E265EC1D46629B001C08F7 /* BoxTransformViewController.m in Sources */,
 				74853D181D1C3545003FE963 /* ViewController.m in Sources */,
 				74E265E91D44C242001C08F7 /* BoxViewController.m in Sources */,
 				74853D151D1C3545003FE963 /* AppDelegate.m in Sources */,
