@@ -19,6 +19,8 @@
 		74E265E61D43A8D0001C08F7 /* CALayer+ZBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265E51D43A8D0001C08F7 /* CALayer+ZBAnimation.m */; };
 		74E265E91D44C242001C08F7 /* BoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265E81D44C242001C08F7 /* BoxViewController.m */; };
 		74E265EC1D46629B001C08F7 /* BoxTransformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265EB1D46629B001C08F7 /* BoxTransformViewController.m */; };
+		74E265EF1D47A05E001C08F7 /* ActionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265EE1D47A05E001C08F7 /* ActionsViewController.m */; };
+		74E265F21D47A106001C08F7 /* CircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E265F11D47A106001C08F7 /* CircleLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		74E265E81D44C242001C08F7 /* BoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxViewController.m; sourceTree = "<group>"; };
 		74E265EA1D46629B001C08F7 /* BoxTransformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxTransformViewController.h; sourceTree = "<group>"; };
 		74E265EB1D46629B001C08F7 /* BoxTransformViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxTransformViewController.m; sourceTree = "<group>"; };
+		74E265ED1D47A05E001C08F7 /* ActionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionsViewController.h; sourceTree = "<group>"; };
+		74E265EE1D47A05E001C08F7 /* ActionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionsViewController.m; sourceTree = "<group>"; };
+		74E265F01D47A106001C08F7 /* CircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleLayer.h; sourceTree = "<group>"; };
+		74E265F11D47A106001C08F7 /* CircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 		74853D0F1D1C3545003FE963 /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				74E265F01D47A106001C08F7 /* CircleLayer.h */,
+				74E265F11D47A106001C08F7 /* CircleLayer.m */,
+				74E265ED1D47A05E001C08F7 /* ActionsViewController.h */,
+				74E265EE1D47A05E001C08F7 /* ActionsViewController.m */,
 				74E265EA1D46629B001C08F7 /* BoxTransformViewController.h */,
 				74E265EB1D46629B001C08F7 /* BoxTransformViewController.m */,
 				74E265E71D44C242001C08F7 /* BoxViewController.h */,
@@ -290,8 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E265F21D47A106001C08F7 /* CircleLayer.m in Sources */,
 				74E265E61D43A8D0001C08F7 /* CALayer+ZBAnimation.m in Sources */,
 				74E265EC1D46629B001C08F7 /* BoxTransformViewController.m in Sources */,
+				74E265EF1D47A05E001C08F7 /* ActionsViewController.m in Sources */,
 				74853D181D1C3545003FE963 /* ViewController.m in Sources */,
 				74E265E91D44C242001C08F7 /* BoxViewController.m in Sources */,
 				74853D151D1C3545003FE963 /* AppDelegate.m in Sources */,

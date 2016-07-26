@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor redColor];
+    self.view.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
+    
     //[CATransaction setAnimationDuration:2.0];
     CALayer* squareLayer = [CALayer layer];
     
@@ -48,7 +51,7 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    
+    [super viewDidAppear:animated];
 }
 #pragma mark - *** Gesture Selector ***
 
@@ -68,9 +71,6 @@
     
     UIView* view = [views objectAtIndex:2];
     [view setCenter: CGPointMake(100, 250)];
-    
-    
-    
 }
 
 
